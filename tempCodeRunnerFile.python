@@ -1,0 +1,16 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+
+from tqdm import tqdm
+image1_BGR = cv2.imread('cat.png')
+image2_BGR = cv2.imread('horse.jpg')
+image3_BGR = cv2.imread('tiger.bmp')
+image1_GRAY =  image1_BGR[:, :, 2] * 0.299 + \
+               image1_BGR[:, :, 1] * 0.587 + \
+               image1_BGR[:, :, 0] * 0.114
+
+print("Type of image_BGR is:", type(image1_GRAY))
+print("Shape of image_BGR is:", image1_GRAY.shape)
+print("Shape of image_GRAY is:", image1_GRAY.shape)
